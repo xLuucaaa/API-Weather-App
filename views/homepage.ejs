@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Moderustic:wght@300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Weather Application </title>
+    <link href="styles/main.css" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    <div class="header-card">
+        <h1 class="lobster-regular">Weather Application</h1>
+        <!-- Filling out this form leads to the /city endpoint, thats why POST and /city. The / gets rendered in the beginning, the action is just when filled out -->
+        <form action="/city" method="POST">
+            <div class="form-combi">
+                <p class="roboto-mono">👇🏻Enter your City Name👇🏻</p>
+                <input class="input-field" type="text" name="city" placeholder="e.g. Stuttgart" ><br>
+                <input class="submit-button" type="submit" name="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

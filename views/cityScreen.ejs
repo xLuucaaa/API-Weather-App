@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/main.css" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="city-card">
+        <h1 class="roboto-mono-bigger">🌡️ The <b>current Weather</b> in ☁️</h1>
+        <br>
+        <h2 class="lobster-regular-smaller">👉<%= cityName.charAt(0).toUpperCase() + cityName.slice(1) %>👈</h2>
+    </div>
+    <div class="weather-forecast">
+        <section class="cards">
+            <article class="card">
+                <h3>Temperature</h3>
+                <%=Math.floor(curTemp - 273.15)%> °C
+            </article>
+            <article class="card">
+                <h3> Minimum Temperature</h3>
+                <%= Math.floor(minTemp - 273.15) %> °C
+            </article>
+            <article class="card">
+                <h3>Maximum Temperature</h3>
+                <%= Math.floor(maxTemp -273.15) %> °C
+            </article>
+            <article class="card">
+                <h3>Wind Speed</h3>
+                <%= Math.round(wind * 3.6) %> km/h
+            </article>
+            <article class="card">
+                <h3>Cloudiness</h3>
+                <%= clouds %> %
+            </article>
+            <article class="card">
+                <h3>Humidity</h3>
+                <%= humidity %> %
+            </article>
+            <article class="card">
+                <h3>Sunrise</h3>
+                <%= new Date(sunrise * 1000).toLocaleString("de-DE", { 
+                    timeZone: "Europe/Berlin", 
+                    hour: '2-digit', 
+                    minute: '2-digit'
+                },) %> am
+            </article>
+            <article class="card">
+                <h3>Sunset</h3>
+                <%= new Date(sunset * 1000).toLocaleString("de-DE", { 
+                    timeZone: "Europe/Berlin", 
+                    hour: '2-digit', 
+                    minute: '2-digit'
+                },) %> pm
+            </article>
+        </section>
+    </div>
+    <form action="/redirect-homescreen" method="GET">
+        <button class="return-button" type="submit">Return to Homepage</button>
+    </form>
+    
+</body>
+
+</html>
